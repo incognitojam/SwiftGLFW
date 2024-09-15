@@ -1,7 +1,7 @@
 // swift-tools-version:5.10
 
-import PackageDescription
 import CompilerPluginSupport
+import PackageDescription
 
 let defines: [SwiftSetting] = [
     /* Uncomment when https://github.com/glfw/glfw/pull/1778 is merged into master */
@@ -15,7 +15,7 @@ let package = Package(
         .library(name: "SwiftGLFW", targets: ["GLFW"])
     ],
     dependencies: [
-        .package(url: "https://github.com/thepotatoking55/CGLFW3.git", branch: "main"),
+        .package(url: "https://github.com/incognitojam/CGLFW3.git", branch: "main")
     ],
     targets: [
         .target(
@@ -33,6 +33,6 @@ let package = Package(
             ],
             swiftSettings: defines
         ),
-        .testTarget(name: "GLFWTests", dependencies: ["GLFW"])
+        .testTarget(name: "GLFWTests", dependencies: ["GLFW"]),
     ]
 )
